@@ -27,7 +27,7 @@ const newUser = {
 
 // GET PARAMS com Axios
 function getUserParams() {
-  const parameter = axios.get(`${url}/3`)
+  const parameter = axios.get(`${url}/2`)
   const response = parameter.then(res => {
     userId.textContent = res.data.id
     userName.textContent = res.data.name
