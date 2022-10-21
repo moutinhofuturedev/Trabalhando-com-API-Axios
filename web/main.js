@@ -27,7 +27,7 @@ const newUser = {
 
 // GET PARAMS com Axios
 function getUserParams() {
-  const parameter = axios.get(`${url}/2`)
+  const parameter = axios.get(`${url}/1`)
   const response = parameter.then(res => {
     userId.textContent = res.data.id
     userName.textContent = res.data.name
@@ -38,6 +38,30 @@ function getUserParams() {
   return response
 }
 
-getUserParams().catch(error => console.log(error.message))
-addUser(newUser).catch(error => console.log(error.message))
+// PUT com Axios
+function updateUser(newUpdate) {
+  const getUpdate = axios.put(`${url}/1`, newUpdate)
+  const response = getUpdate.then(res => updateId.textContent = JSON.stringify(res.data))
+  
+  return response
+} 
+
+const newUpdate = {
+  name: 'Esther Agbaje',
+  avatar: 'https://avatars.githubusercontent.com/u/53586167?v=4',
+  city: 'Dubai'
+}
+
+// DELETE com Axios
+function deteleUser(id) {
+  const deleteId = axios.delete(`${url}/${id}`)
+  const response = deleteId.then(res => del.textContent = res.data)
+
+  return response
+}
+
 getUserData().catch(error => console.log(error.message))
+addUser(newUser).catch(error => console.log(error.message))
+getUserParams().catch(error => console.log(error.message))
+updateUser(newUpdate).catch(error => console.log(error.message))
+deteleUser(2)
