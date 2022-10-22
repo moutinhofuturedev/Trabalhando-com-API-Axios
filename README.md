@@ -31,7 +31,7 @@ Estrutura desenvolvida em Node.js utilizando o framework Express para criar uma 
 
 > 🗂 _pasta front end_
 
-Estrutura desenvovida para consumir API usando o Fetch para fornecer uma interface em Javascript e manipular partes do pipeline HTTP.
+Axios é um cliente HTTP baseado em promessa simples para o navegador e node.js. O Axios fornece uma biblioteca simples de usar em um pequeno pacote com uma interface muito extensível.
 
 
 ## Como utilizar?
