@@ -9,7 +9,7 @@ type APIResponse = {
 
 // GET com Axios
 function getUserData() {
-  const getData = axios.get(url)
+  const getData = axios.get<APIResponse>(url)
   const response = getData.then(res => dataApi.textContent = JSON.stringify(res.data))
 
   return response
@@ -31,8 +31,8 @@ const newUser = {
 } 
 
 // GET PARAMS com Axios
-function getUserParams() {
-  const parameter = axios.get(`${url}/3`)
+function getUserParams(p: number) {
+  const parameter = axios.get(`${url}/${p}`)
   const response = parameter.then(res => {
     userId.textContent = res.data.id
     userName.textContent = res.data.name
@@ -67,6 +67,6 @@ function deteleUser(id: number) {
 
 getUserData().catch(error => console.log(error.message))
 addUser(newUser).catch(error => console.log(error.message))
-getUserParams().catch(error => console.log(error.message))
+getUserParams(1).catch(error => console.log(error.message))
 updateUser(newUpdate).catch(error => console.log(error.message))
-deteleUser(4)
+// deteleUser(4)
